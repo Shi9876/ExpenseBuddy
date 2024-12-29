@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff8c42;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.project-name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links .btn {
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.form-container {
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    flex: 1;
+}
+
+.form-container h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    margin: 10px 0 5px;
+}
+
+.form input, .form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #ff8c42;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #e67332;
+}
+
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Optional: center-align in the parent container */
+    gap: 10px; /* Adds space between the error message and the button */
+}
+
+.error-message {
+    color: #595655;
+    font-weight: bold;
+}
+
+.login-button,
+.signup-button {
+    padding: 5px 15px;
+    background-color: #595655;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 10px; /* Adds space from the error message */
+}
+
+.login-button:hover,
+.signup-button:hover {
+    background-color: #ff8c42;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: auto;
+}
+
+
+/* Signup-success page styling */
+
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+}
+
+.success-box {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-width: 400px;
+}
+
+.success-box h1 {
+    margin-bottom: 10px;
+}
+
+.success-box p {
+    margin-bottom: 20px;
+}
+
+.success-box .submit-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #ff8c42;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.success-box .submit-btn:hover {
+    background-color: #e67332;
+}
+
