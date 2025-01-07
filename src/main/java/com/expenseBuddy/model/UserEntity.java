@@ -3,6 +3,9 @@ package com.expenseBuddy.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="users")
 public class UserEntity {
@@ -33,6 +36,9 @@ public class UserEntity {
         this.password = password;
         this.role = role;
     }
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
+    private List<ExpenseEntity> expenses = new ArrayList<>();
 
     //Getters and Setters
     public long getId(){
@@ -75,5 +81,12 @@ public class UserEntity {
         this.role = role;
      }
 
+     public List<ExpenseEntity> getExpenses(){
+        return expenses;
+     }
+
+     public void setExpenses(List<ExpenseEntity> expenses){
+        this.expenses = expenses;
+     }
 
 }

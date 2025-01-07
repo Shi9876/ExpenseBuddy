@@ -18,7 +18,8 @@ public class SecurityConfig {
 
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/auth/signup-view", "/auth/signup-success", "/auth/login-view").permitAll() // Public pages
+                        .requestMatchers("/", "/auth/signup-view", "/auth/signup-success",
+                                "/auth/login-view").permitAll() // Public pages
                         .requestMatchers("/css/**", "/images/**").permitAll() //allow access to static resources (CSS, images)
                         .requestMatchers("/user/**").hasRole("USER")
                         .requestMatchers("/admin/**").hasRole("ADMIN")
@@ -27,6 +28,7 @@ public class SecurityConfig {
                 .formLogin(form -> form
                         .loginPage("/auth/login-view")
                         .loginProcessingUrl("/auth/login-view")
+                        .defaultSuccessUrl("/user/dashboard")
                         .failureUrl("/auth/login-view?error=true")   //Redirect to login with error flag
 
                         .successHandler((request, response, authentication) -> {

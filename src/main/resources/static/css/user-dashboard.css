@@ -1,0 +1,271 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #f7f7f7;  /* Soft grey background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #FF7F50;  /* Coral Orange */
+  color: white;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.project-name {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.nav-links .logout-btn {
+  background-color: #4A4A4A;  /* Dark grey logout button */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links .logout-btn:hover {
+  background-color: #333333;  /* Darker grey on hover */
+}
+
+/* Main Dashboard Content */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Buttons */
+.button {
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 10px;
+}
+
+.add-expense-btn {
+  background-color: #FF8C00;  /* Darker orange */
+  color: white;
+}
+
+.add-expense-btn:hover {
+  background-color: #FF6A00;  /* Lighter orange on hover */
+}
+
+.view-expense-btn {
+  background-color: #808080;  /* Grey */
+  color: white;
+}
+
+.view-expense-btn:hover {
+  background-color: #6e6e6e;  /* Darker grey on hover */
+}
+
+/* Edit and Delete Buttons */
+.edit-btn,
+.delete-btn {
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 5px;
+}
+
+.edit-btn {
+  background-color: #FFA500;  /* Orange color for edit */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #FF8C00;  /* Slightly darker orange on hover */
+}
+
+.delete-btn {
+  background-color: #D32F2F;  /* Red color for delete */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #B71C1C;  /* Darker red on hover */
+}
+
+
+/* Total Expense */
+.total-expense-container {
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-expense-label {
+    color: #555;
+}
+
+.total-expense-amount {
+    color: #ff8c00;
+}
+
+
+/* Table Styling */
+.table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th,
+table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #FF7F50;  /* Coral Orange */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table td {
+  background-color: #fafafa;  /* Soft grey background */
+}
+
+table tr:nth-child(even) td {
+  background-color: #f0f0f0;  /* Slightly lighter grey for even rows */
+}
+
+table tr:hover td {
+  background-color: #f5f5f5;  /* Hover effect on rows */
+}
+
+table td button {
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+table td button.edit-btn,
+table td button.delete-btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Buttons inside table cells */
+table td form {
+  display: inline;
+}
+
+table td button.edit-btn {
+  background-color: #FFA500;  /* Orange color for edit */
+  color: white;
+}
+
+table td button.edit-btn:hover {
+  background-color: #FF8C00;  /* Darker orange on hover */
+}
+
+table td button.delete-btn {
+  background-color: #D32F2F;  /* Red color for delete */
+  color: white;
+}
+
+table td button.delete-btn:hover {
+  background-color: #B71C1C;  /* Darker red on hover */
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .welcome-msg {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  table td {
+    padding: 12px;
+  }
+}
