@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - User Management</title>
+  <link rel="stylesheet" href="/css/admin-user-management.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+<!-- Admin Dashboard Header with Logo -->
+<div class="admin-dashboard-header">
+  <div class="logo">
+    <img src="/images/logo.png" alt="ExpenseBuddy Logo" width="50" height="50">
+  </div>
+  <h1>Admin Dashboard</h1>
+  <nav>
+    <ul>
+      <li><a href="/admin/users" th:text="'Manage Users'">Manage Users</a></li>
+      <li><a href="/admin/expenses" th:text="'Manage Expenses'">Manage Expenses</a></li>
+      <li><a href="/admin/profile" th:text="'Admin Profile'">Admin Profile</a></li>
+      <li><a href="/auth/logout" th:text="'Logout'">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="user-management">
+  <h2>User Management</h2>
+
+  <!-- User Table with Action Buttons -->
+  <table class="user-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Display users sequentially without gaps in IDs -->
+    <tr th:each="user, iterStat : ${users}">
+      <!-- Display sequential ID number -->
+      <td th:text="${iterStat.index + 1}"></td> <!-- This will show IDs as 1, 2, 3, without gaps -->
+      <td th:text="${user.username}"></td>
+      <td th:text="${user.email}"></td>
+      <td>
+        <!-- Edit Button -->
+        <a th:href="@{/admin/users/edit/{id}(id=${user.id})}" class="edit-button">Edit</a>
+
+        <!-- Delete Button -->
+        <form th:action="@{/admin/users/delete/{id}(id=${user.id})}" method="POST" style="display:inline;">
+          <button type="submit" class="delete-button">Delete</button>
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <!-- Add New User Button -->
+  <a href="/admin/users/add" class="add-user-button">Add New User</a>
+</div>
+
+<!-- Footer Section (Optional) -->
+<footer>
+  <p>ExpenseBuddy - Admin Panel</p>
+</footer>
+
+</body>
+</html>

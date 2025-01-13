@@ -47,18 +47,18 @@ public class ExpenseService {
         expenseRepository.save(existingExpense);
     }
 
-    public  void deleteExpense(Long id){
-        expenseRepository.deleteById(id);
-    }
-
 
     public void deleteExpenseById(Long id) {
         expenseRepository.deleteById(id);
     }
 
 
-
-    public List<ExpenseEntity> getAllExpenses() {
+    //Fetch all expenses for admin
+    public List<ExpenseEntity> getAllExpenses(){
         return expenseRepository.findAll();
+    }
+
+    public List<ExpenseEntity> getExpensesByUsername(String username) {
+        return expenseRepository.findByUserUsername(username);  //Assumes 'UserEntity has a 'username' field
     }
 }

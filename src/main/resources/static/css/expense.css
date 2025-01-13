@@ -2,10 +2,10 @@
 .form-container {
     max-width: 600px;
     margin: 50px auto;
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
     background: linear-gradient(135deg, #fff5e6, #ffe0cc);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     font-family: 'Arial', sans-serif;
 }
 
@@ -14,15 +14,17 @@
     text-align: center;
     font-size: 28px;
     color: #ff8c42;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-transform: uppercase;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /* Form styles */
 form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 /* Form group styling */
@@ -43,16 +45,17 @@ form {
     width: 100%;
     padding: 12px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     background: #fff;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     border-color: #ff8c42;
     outline: none;
+    box-shadow: 0 0 5px rgba(255, 140, 66, 0.5);
 }
 
 /* Dropdown styling */
@@ -72,7 +75,7 @@ select {
 
 /* Buttons */
 .button {
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 16px;
     text-align: center;
     color: #fff;
@@ -81,6 +84,8 @@ select {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
+    font-weight: bold;
+
     transition: background-color 0.3s, transform 0.2s;
 }
 

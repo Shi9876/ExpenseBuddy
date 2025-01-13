@@ -8,10 +8,12 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -30,8 +32,8 @@ public class UserService implements UserDetailsService {
         }
 
         //Prefix role with "ROLE_" if not already present
-        if(!userEntity.getRole().startsWith("ROLE_")){
-            userEntity.setRole("ROLE_"+ userEntity.getRole().toUpperCase());
+        if (!userEntity.getRole().startsWith("ROLE_")) {
+            userEntity.setRole("ROLE_" + userEntity.getRole().toUpperCase());
         }
 
         userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
@@ -66,6 +68,49 @@ public class UserService implements UserDetailsService {
     public UserEntity findByUsername(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new UserNotFoundException("User not found with username: " + username));
+    }
+
+    //For Admin dashboard Features
+    public List<UserEntity> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+
+    //Add a new user
+    public void addUser(UserEntity user) {
+
+        //Encode the password if necessary
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        //Ensure the role starts with "ROLE_"
+        if(!user.getRole().startsWith("ROLE_")){
+            user.setRole("ROLE_" +
+                    user.getRole().toUpperCase());
+        }
+
+        userRepository.save(user);
+
+    }
+
+    //Update an existing user
+    public void updateUser(UserEntity user) {
+        UserEntity existingUser = userRepository.findById(user.getId())
+                        .orElseThrow(() -> new RuntimeException("User not found"));
+
+        //Update only the fields that are provided
+        existingUser.setUsername(user.getUsername());
+
+        existingUser.setEmail(user.getEmail());
+
+        existingUser.setRole(user.getRole());
+
+        //Save updated user
+        userRepository.save(existingUser);
+    }
+
+    //Delete a user
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 }
 

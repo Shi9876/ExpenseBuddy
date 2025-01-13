@@ -14,4 +14,8 @@ public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Long> {
     List<ExpenseEntity> findByUserId(Long userId);
 
     List<ExpenseEntity> findByUser(UserEntity user);
+
+    List<ExpenseEntity> findAll();    //Fetch all expenses
+
+    List<ExpenseEntity> findByUserUsername(String username);
 }

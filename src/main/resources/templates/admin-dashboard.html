@@ -5,15 +5,38 @@
   <link rel="stylesheet" th:href="@{/css/admin-dashboard.css}">
 </head>
 <body>
-<h1>Welcome to Admin Dashboard</h1>
-<a th:href="@{/auth/logout}">Logout</a>
-<div class="dashboard-container">
-  <h1>Welcome to the Admin Dashboard</h1>
-  <div class="navigation">
-    <a href="/admin/users" class="btn">Manage Users</a>
-    <a href="/admin/expenses" class="btn">Manage Expenses</a>
-    <a href="/admin/summary" class="btn">View Analytics</a>
+<!-- Header Section -->
+<header class="header">
+  <div class="logo-container">
+    <img th:src="@{/images/logo.png}" alt="Logo" class="logo">
+    <h1 class="header-title">ExpenseBuddy</h1>
   </div>
-</div>
+  <div class="logout-container">
+    <a th:href="@{/auth/logout}" class="logout-btn">Logout</a>
+  </div>
+</header>
+
+<!-- Main Content Section -->
+<main class="main-content">
+  <div class="welcome-message">
+    <h2>Welcome, <span th:text="${username}"></span>!</h2>
+    <p>Manage your users and expenses efficiently.</p>
+  </div>
+
+  <!-- Dashboard Navigation Section -->
+  <div class="dashboard-buttons">
+    <div class="navigation">
+      <a href="/admin/users" class="btn">View Users</a>
+      <a href="/admin/expenses" class="btn">View Expenses</a>
+      <a href="/admin/analytics" class="btn">Dashboard Analytics</a>
+      <a href="/admin/profile" class="btn">Admin Profile</a>
+    </div>
+  </div>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <p>&copy; 2025 ExpenseBuddy. All Rights Reserved.</p>
+</footer>
 </body>
 </html>

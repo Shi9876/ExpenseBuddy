@@ -29,6 +29,7 @@ public class SecurityConfig {
                         .loginPage("/auth/login-view")
                         .loginProcessingUrl("/auth/login-view")
                         .defaultSuccessUrl("/user/dashboard")
+                        .defaultSuccessUrl("/admin/dashboard")
                         .failureUrl("/auth/login-view?error=true")   //Redirect to login with error flag
 
                         .successHandler((request, response, authentication) -> {
