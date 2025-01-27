@@ -8,6 +8,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
   color: #333;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('/images/dashboard.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 /* Header */
@@ -63,8 +66,69 @@ main {
 
 .dashboard-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem;
   text-align: center;
+}
+
+.dashboard-container h1, h2, h3{
+        font-family: 'Times New Roman', Serif;
+        background: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        border-radius: 2px;
+
+}
+
+.dashboard-container h1{
+      margin-top: 3rem;
+      font-size: 2rem;
+      padding: 15px;
+}
+
+.dashboard-container h2, h3{
+     margin-top: 2rem;
+     font-size: 1.6rem;
+     padding: 15px;
+}
+
+.dashboard-container,
+.welcome-msg {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Expenses Summary */
+.expenses-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.total-expense-container {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-expense-label {
+  color: #555;
+}
+
+.total-expense-amount {
+  color: #ff8c00;
+}
+
+.back-to-dashboard .back-btn {
+  padding: 10px 20px;
+  background-color: #FF8C00; /* Orange */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.back-to-dashboard .back-btn:hover {
+  background-color: #FF6A00; /* Lighter orange on hover */
 }
 
 /* Buttons */
@@ -79,75 +143,55 @@ main {
 }
 
 .add-expense-btn {
-  background-color: #FF8C00;  /* Darker orange */
+  background-color: #FF8C00; /* Darker orange */
   color: white;
 }
 
 .add-expense-btn:hover {
-  background-color: #FF6A00;  /* Lighter orange on hover */
+  background-color: #FF6A00; /* Lighter orange on hover */
 }
 
 .view-expense-btn {
-  background-color: #808080;  /* Grey */
+  background-color: #808080; /* Grey */
   color: white;
 }
 
 .view-expense-btn:hover {
-  background-color: #6e6e6e;  /* Darker grey on hover */
+  background-color: #6e6e6e; /* Darker grey on hover */
 }
 
 /* Edit and Delete Buttons */
 .edit-btn,
 .delete-btn {
-  padding: 10px 18px;
+  padding: 8px 12px; /* Adjusted padding for smaller size */
   text-decoration: none;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 12px; /* Smaller text size */
   transition: all 0.3s ease;
+  margin-right: 5px; /* Added spacing between buttons */
   display: inline-block;
-  margin: 5px;
 }
 
 .edit-btn {
-  background-color: #FFA500;  /* Orange color for edit */
+  background-color: #FFA500; /* Orange color for edit */
   color: white;
 }
 
 .edit-btn:hover {
-  background-color: #FF8C00;  /* Slightly darker orange on hover */
+  background-color: #FF8C00; /* Slightly darker orange on hover */
 }
 
 .delete-btn {
-  background-color: #D32F2F;  /* Red color for delete */
+  background-color: #D32F2F; /* Red color for delete */
   color: white;
 }
 
 .delete-btn:hover {
-  background-color: #B71C1C;  /* Darker red on hover */
+  background-color: #B71C1C; /* Darker red on hover */
 }
-
-
-/* Total Expense */
-.total-expense-container {
-    text-align: right;
-    margin-bottom: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.total-expense-label {
-    color: #555;
-}
-
-.total-expense-amount {
-    color: #ff8c00;
-}
-
 
 /* Table Styling */
 .table-container {
-  margin-top: 20px;
   overflow-x: auto;
   padding: 20px;
   background-color: #ffffff;
@@ -166,69 +210,42 @@ table {
 
 table th,
 table td {
-  padding: 16px 20px;
+  padding: 10px 12px; /* Reduced padding for less space between rows/columns */
   text-align: left;
   border-bottom: 1px solid #ddd;
+  font-size: 14px; /* Smaller text size for table content */
 }
 
 table th {
-  background-color: #FF7F50;  /* Coral Orange */
+  background-color: #FF7F50; /* Coral Orange */
   color: white;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 table td {
-  background-color: #fafafa;  /* Soft grey background */
+  background-color: #fafafa; /* Soft grey background */
 }
 
 table tr:nth-child(even) td {
-  background-color: #f0f0f0;  /* Slightly lighter grey for even rows */
+  background-color: #f0f0f0; /* Slightly lighter grey for even rows */
 }
 
 table tr:hover td {
-  background-color: #f5f5f5;  /* Hover effect on rows */
-}
-
-table td button {
-  font-size: 14px;
-  padding: 8px 16px;
-  border: none;
-  cursor: pointer;
-}
-
-table td button.edit-btn,
-table td button.delete-btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  background-color: #f5f5f5; /* Hover effect on rows */
 }
 
 /* Buttons inside table cells */
 table td form {
-  display: inline;
+  display: inline; /* Ensures buttons are on the same row */
 }
 
-table td button.edit-btn {
-  background-color: #FFA500;  /* Orange color for edit */
-  color: white;
+table td button {
+  font-size: 12px;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
 }
-
-table td button.edit-btn:hover {
-  background-color: #FF8C00;  /* Darker orange on hover */
-}
-
-table td button.delete-btn {
-  background-color: #D32F2F;  /* Red color for delete */
-  color: white;
-}
-
-table td button.delete-btn:hover {
-  background-color: #B71C1C;  /* Darker red on hover */
-}
-
-
 
 /* Footer */
 footer {
@@ -251,8 +268,12 @@ footer {
     text-align: center;
   }
 
+  body {
+    background-position: center;
+  }
+
   table {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .button {
@@ -261,11 +282,11 @@ footer {
 
   .edit-btn,
   .delete-btn {
-    font-size: 14px;
-    padding: 8px 14px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   table td {
-    padding: 12px;
+    padding: 10px;
   }
 }

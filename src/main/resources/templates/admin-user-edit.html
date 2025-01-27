@@ -36,13 +36,8 @@
         <input type="email" id="email" name="email" th:value="${user.email}" required/>
 
         <label for="role">Role</label>
-        <select id="role" name="role" required>
-            <option th:each="role : ${roles}"
-                    th:value="${role}"
-                    th:text="${role}"
-                    th:selected="${role == user.role}">
-            </option>
-        </select>
+        <input type="text" id="role" name="role" th:value="${user.role}" readonly />
+
 
         <div class="form-buttons">
             <button type="submit" class="save-button" th:text="'Save Changes'">Save Changes</button>
@@ -50,6 +45,11 @@
         </div>
     </form>
 </div>
+
+<!-- Footer Section -->
+<footer>
+    <p>ExpenseBuddy - Admin Panel</p>
+</footer>
 
 </body>
 </html>

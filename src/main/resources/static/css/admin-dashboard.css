@@ -4,6 +4,14 @@ body {
     font-family: Arial, sans-serif;
     background-color: #F4F4F4; /* Light Grey Background */
     color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/admin_dsb.jpg') no-repeat center center fixed;
+      background-size: cover;
 }
 
 /* Header Section */
@@ -56,7 +64,7 @@ body {
 .main-content {
     text-align: center;
     margin: 50px auto;
-    padding: 40px 20px;
+    padding: 50px 30px;
     max-width: 900px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -72,7 +80,15 @@ body {
 
 .welcome-message h2 {
     margin: 0;
-    color: #FF7043; /* Orange */
+    color: #ba502e;
+     font-size: 2.4rem;
+       font-family: Times New Roman, Serif;
+}
+
+.welcome-message p {
+    margin: 10px;
+    font-size: 1.2rem;
+    color: #9e9a95;;
 }
 
 /* Dashboard Navigation Section */
@@ -109,15 +125,14 @@ body {
 }
 
 /* Footer Section */
-.footer {
+footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px;
     position: fixed;
-    bottom: 0;
     width: 100%;
-    font-size: 14px;
+    bottom: 0;
 }
 
 /* Responsive Design */

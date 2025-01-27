@@ -42,4 +42,5 @@ public class AdminExpenseController {
         expenseService.deleteExpenseById(id);
         return "redirect:/admin/expenses";
     }
+
 }

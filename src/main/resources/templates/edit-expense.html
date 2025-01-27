@@ -5,6 +5,19 @@
   <link rel="stylesheet" th:href="@{/css/expense.css}" />
 </head>
 <body>
+
+<header>
+  <div class="navbar">
+    <div class="logo-section">
+      <img class="logo" src="/images/logo.png" alt="Logo" />
+      <span class="project-name">ExpenseBuddy</span>
+    </div>
+    <div class="nav-links">
+      <a href="/auth/logout" class="logout-btn">Logout</a>
+    </div>
+  </div>
+</header>
+
 <div class="form-container">
   <h2 class="form-title">Edit Expense</h2>
   <form th:action="@{/user/expenses/update}" th:object="${expense}" method="post">
@@ -61,5 +74,10 @@
     </div>
   </form>
 </div>
+
+<footer class="footer">
+  <p>ExpenseBuddy © 2025</p>
+</footer>
+
 </body>
 </html>

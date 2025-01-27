@@ -1,52 +1,58 @@
-/* General Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Light Gray Background */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Header Styling */
+body {
+      font-family: 'Roboto', Arial, sans-serif;
+      background-color: #f7f7f7;  /* Soft grey background */
+      color: #333;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+        url('/images/dashboard.jpg') no-repeat center center fixed;
+      background-size: cover;
+}
+
+/* Header Section */
 .admin-dashboard-header {
+    background-color: #ff7f32; /* Orange */
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ff6600; /* Orange Background */
-    color: white;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .admin-dashboard-header .logo img {
-    height: 50px;
-    border-radius: 5px;
+    max-width: 50px;
 }
 
 .admin-dashboard-header h1 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
+    color: white;
+    font-size: 24px;
 }
 
 .admin-dashboard-header nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
+}
+
+.admin-dashboard-header nav ul li {
+    margin-left: 20px;
 }
 
 .admin-dashboard-header nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
 }
 
 .admin-dashboard-header nav ul li a:hover {
-    color: #ffe6cc; /* Light Orange */
+    background-color: #e5682d;
+    border-radius: 5px;
 }
+
 
 /* Container Styling */
 .container {
@@ -123,4 +129,14 @@ button,
 
 .cancel-button:hover {
     background-color: #999;
+}
+
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0; /* Prevent shrinking */
 }

@@ -14,7 +14,7 @@ public class UserEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
     @Column(nullable = false, unique = true)
@@ -39,6 +39,7 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<ExpenseEntity> expenses = new ArrayList<>();
+
 
     //Getters and Setters
     public long getId(){
@@ -88,5 +89,18 @@ public class UserEntity {
      public void setExpenses(List<ExpenseEntity> expenses){
         this.expenses = expenses;
      }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", expenses=" + expenses +
+                '}';
+    }
+
 
 }

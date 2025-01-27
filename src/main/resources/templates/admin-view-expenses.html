@@ -4,21 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>View Expenses - Admin Dashboard</title>
-  <link rel="stylesheet" href="/css/admin-expenses.css">
+  <link rel="stylesheet" href="/css/admin-view-expenses.css">
 </head>
 <body>
 <div class="admin-dashboard-header">
-  <h1>View Expenses</h1>
+  <div class="logo">
+    <img src="/images/logo.png" alt="ExpenseBuddy Logo" width="50" height="50">
+  </div>
+  <h1>Admin Dashboard</h1>
   <nav>
     <ul>
       <li><a th:href="@{/admin/users}">Manage Users</a></li>
       <li><a th:href="@{/admin/expenses}" class="active">Manage Expenses</a></li>
       <li><a th:href="@{/admin/profile}">Admin Profile</a></li>
+      <li><a th:href="@{/admin/dashboard-view}">Home</a></li>
       <li><a th:href="@{/auth/logout}">Logout</a></li>
     </ul>
   </nav>
 </div>
 
+<div class="content-wrapper">
 <div class="content">
   <!-- Search Bar -->
   <form th:action="@{/admin/expenses/search}" method="GET" class="search-form">
@@ -28,7 +33,7 @@
   </form>
 
   <!-- Expenses Table -->
-  <table>
+  <table class="user-table">
     <thead>
     <tr>
       <th>User</th>
@@ -57,5 +62,12 @@
     </tbody>
   </table>
 </div>
+</div>
+
+<!-- Footer Section (Optional) -->
+<footer>
+  <p>ExpenseBuddy - Admin Panel</p>
+</footer>
+
 </body>
 </html>
