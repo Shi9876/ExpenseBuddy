@@ -18,7 +18,7 @@ body {
 .header {
     background-color: #FF7043; /* Orange */
     color: white;
-    padding: 15px 30px;
+    padding: 6px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,7 +129,7 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 6px;
     position: fixed;
     width: 100%;
     bottom: 0;
